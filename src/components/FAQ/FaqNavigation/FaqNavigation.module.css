@@ -1,0 +1,32 @@
+.wr {
+	height: 100%;
+}
+
+.navigation {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+
+.navigation span {
+	width: 184px;
+	font-size: 20px;
+	font-weight: 500;
+}
+
+.elements {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.elements li {
+	font-size: 16px;
+	font-weight: 300;
+	line-height: 24px;
+	cursor: pointer;
+}
+
+.elements li.active {
+	color: var(--primary, #0c68f4);
+}

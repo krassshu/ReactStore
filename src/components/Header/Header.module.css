@@ -1,0 +1,74 @@
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100px;
+	border-bottom: 2px solid;
+	border-image-slice: 1;
+	border-image-source: linear-gradient(
+		to left,
+		var(--primary-25),
+		var(--primary-50),
+		var(--primary-25)
+	);
+}
+
+.container {
+	display: flex;
+	justify-content: space-between;
+}
+.logo {
+	border: none;
+}
+
+.logo img {
+	width: 56px;
+	height: 63px;
+}
+
+.nav {
+	display: flex;
+	align-items: center;
+}
+
+.nav-items {
+	display: flex;
+	gap: 48px;
+}
+
+.nav-item a {
+	color: var(--black, #0c0c0c);
+	text-decoration: none;
+	padding: 8px;
+	font-size: 18px;
+}
+
+.header-tools {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.header-tool {
+	padding: 8px;
+}
+
+.header-tool button {
+	width: 30px;
+	height: 30px;
+	background: none;
+	border: none;
+}
+
+.header-tool .search {
+	background: center no-repeat url("../../assets/icons/search-normal.svg");
+}
+
+.header-tool .basket {
+	background: center no-repeat url("../../assets/icons/bag.svg");
+}
+
+.header-tool .user {
+	background: center no-repeat url("../../assets/icons/user.svg");
+}

@@ -1,0 +1,32 @@
+.wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 32px;
+	margin: 40px 0;
+}
+
+.el {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	gap: 16px;
+	border-bottom: 1px solid transparent;
+	transition: border-bottom 0.3s;
+}
+
+.el:hover {
+	border-bottom: 1px solid var(--primary);
+}
+
+.el img {
+	width: 48px;
+	height: 48px;
+}
+
+.el span {
+	color: var(--gray-444444, #444);
+	font-size: 20px;
+	font-weight: 300;
+	line-height: 28px;
+}

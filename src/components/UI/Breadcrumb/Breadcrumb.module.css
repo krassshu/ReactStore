@@ -1,0 +1,20 @@
+.breadcrumbs {
+	display: flex;
+	align-items: center;
+	color: var(--gray-70, #717171);
+	margin-top: 24px;
+}
+
+.arrow {
+	display: flex;
+	align-items: center;
+	width: 24px;
+	height: 24px;
+}
+
+.active {
+	color: var(--primary, #0c68f4);
+	padding: 4px 0px;
+	border-bottom: 1px solid var(--primary, #0c68f4);
+	cursor: pointer;
+}

@@ -1,0 +1,61 @@
+.box {
+	position: relative;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	width: 100%;
+	height: 420px;
+	margin: 48px 0;
+	border-radius: 8px;
+	background-color: #223949;
+	overflow: hidden;
+}
+.frame {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	z-index: 1;
+}
+.frame:first-child {
+	gap: 16px;
+}
+
+.frame h5 {
+	color: #fff;
+	font-size: 44px;
+	font-weight: 500;
+	text-transform: uppercase;
+}
+
+.frame span {
+	color: #fff;
+	font-size: 24px;
+	font-weight: 300;
+}
+
+.frame button {
+	color: #223949;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 8px 16px;
+	margin-top: 40px;
+	border-radius: 8px;
+	background: #ff6951;
+	border: none;
+}
+
+.frame img {
+	width: auto;
+	height: 338px;
+}
+
+.ellipse {
+	position: absolute;
+	right: -50%;
+	transform: translateX(-50%);
+	width: 800px;
+	height: 655px;
+	background: #ff6951;
+	border-radius: 800px;
+}

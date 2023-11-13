@@ -1,0 +1,30 @@
+.wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	gap: 8px;
+	width: 100%;
+}
+
+.category {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 8px;
+	width: fit-content;
+	padding: 8px;
+	border: 1px solid var(--black, #0c0c0c);
+	border-radius: 8px;
+}
+
+.category span {
+	min-width: 85px;
+}
+
+.btn {
+	width: 24px;
+	height: 24px;
+	background-color: transparent;
+	border: none;
+	border-radius: 8px;
+}

@@ -1,0 +1,27 @@
+.aside {
+	display: flex;
+	flex-direction: column;
+	width: 288px;
+}
+
+.heading {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 16px;
+}
+
+.heading span {
+	color: var(--black, #0c0c0c);
+	font-size: 20px;
+	font-weight: 500;
+}
+
+.clearBtn {
+	background-color: transparent;
+	color: var(--primary, #0c68f4);
+	border: none;
+	text-align: right;
+	font-size: 16px;
+	font-weight: 400;
+}

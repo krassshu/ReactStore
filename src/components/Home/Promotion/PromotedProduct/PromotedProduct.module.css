@@ -1,0 +1,72 @@
+.box {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	flex-grow: 1;
+	height: 420px;
+	border-radius: 8px;
+	background: var(--primary, #005690);
+	padding: 32px;
+	overflow: hidden;
+}
+
+.box h4 {
+	color: #fcc870;
+	font-size: 24px;
+	font-weight: 500;
+	text-align: center;
+	z-index: 1;
+}
+
+.item {
+	z-index: 1;
+}
+
+.main-content {
+	display: flex;
+	align-items: center;
+}
+
+.main-content img {
+	width: 210px;
+	height: 169px;
+}
+
+.main-content span {
+	color: #005690;
+	font-size: 20px;
+	font-weight: 500;
+}
+
+.buy-btn {
+	width: 148px;
+	height: 46px;
+	padding: 8px 16px;
+	background: var(--primary, #0c68f4);
+	color: var(--white, #fff);
+	border: none;
+	border-radius: 8px;
+	font-weight: 400;
+	font-size: 16px;
+}
+
+.elipse {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	transform: translate(-15%, 10%);
+	width: 566px;
+	height: 320px;
+	background: no-repeat center
+		url("../../../../assets/ui-elements/yellow-elipse.svg");
+}
+.small-elipse {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 110px;
+	height: 102px;
+	background: no-repeat center
+		url("../../../../assets/ui-elements/small-yellow-elipse.svg");
+}

@@ -1,0 +1,15 @@
+.item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    height: 196px;
+    width: 184px;
+    padding: 8px 18px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.item img {
+    width: 148px;
+    height: 148px;
+}

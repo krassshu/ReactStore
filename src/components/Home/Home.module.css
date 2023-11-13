@@ -1,0 +1,37 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.frame {
+    display: flex;
+    flex-direction: column;
+    gap: 110px;
+}
+.frame:last-child{
+    flex-shrink: 0;
+}
+
+.text-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.text-wrapper h1, .text-wrapper h3 {
+    color: var(--primary-700, #042352);
+}
+
+.frame .button{
+    width: 288px;
+    height: 56px;
+    background: var(--secondary, #F45E0C);
+    color: var(--white, #fff);
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    text-align: center;
+}
+

@@ -1,0 +1,44 @@
+.acord {
+	padding: 16px;
+}
+
+.head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 16px 0;
+}
+
+.head span {
+	font-size: 20px;
+	font-weight: 300;
+	line-height: 28px;
+}
+
+.head button {
+	width: 24px;
+	height: 24px;
+	border: none;
+	background-color: transparent;
+}
+
+.price {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.inputs {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.inputs input[type="number"] {
+	width: 84px;
+	padding: 8px;
+	border-radius: 8px;
+	border: 1px solid var(--gray-70, #717171);
+	font-size: 20px;
+	font-weight: 300;
+	line-height: 28px;
+}
