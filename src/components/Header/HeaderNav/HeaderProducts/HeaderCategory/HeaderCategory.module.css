@@ -1,0 +1,23 @@
+.categoryItems {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 16px;
+	width: 289px;
+	padding: 24px 16px;
+	border-right: 1px solid var(--gray-60, #9e9e9e);
+}
+
+.categoryItem a {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	color: var(--black, #0c0c0c);
+	font-size: 18px;
+	font-weight: 300;
+	text-decoration: none;
+}
+
+.categoryItem a:hover {
+	color: var(--primary, #0c68f4);
+}

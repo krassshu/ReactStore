@@ -1,9 +1,11 @@
 .header {
+	position: relative;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	width: 100%;
 	height: 100px;
+	background-color: var(--white, #fff);
 	border-bottom: 2px solid;
 	border-image-slice: 1;
 	border-image-source: linear-gradient(
@@ -12,36 +14,23 @@
 		var(--primary-50),
 		var(--primary-25)
 	);
+	z-index: 9999;
 }
 
 .container {
+	position: relative;
 	display: flex;
 	justify-content: space-between;
 }
 .logo {
+	display: flex;
+	align-items: center;
 	border: none;
 }
 
 .logo img {
 	width: 56px;
 	height: 63px;
-}
-
-.nav {
-	display: flex;
-	align-items: center;
-}
-
-.nav-items {
-	display: flex;
-	gap: 48px;
-}
-
-.nav-item a {
-	color: var(--black, #0c0c0c);
-	text-decoration: none;
-	padding: 8px;
-	font-size: 18px;
 }
 
 .header-tools {

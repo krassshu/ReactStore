@@ -22,6 +22,7 @@ export default function RootLayout({
 				<Header />
 				<main className="spacer">{children}</main>
 				<Footer />
+				<div id="react-portals"></div>
 			</body>
 		</html>
 	)

@@ -1,9 +1,18 @@
-import classes from "./Header.module.css"
-import logoImg from "../../assets/logo.png"
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
+import React, { useState } from "react"
+import ReactDOM from "react-dom"
+
+import classes from "./Header.module.css"
+import logoImg from "@/assets/logo.png"
+import Backdrop from "../UI/Backdrop/Backdrop"
+import HeaderNav from "./HeaderNav/HeaderNav"
 
 export default function Header() {
+	const [isBackdropVisible, setIsBackdropVisible] = useState(false)
+
 	return (
 		<header className={classes.header}>
 			<div className={classes.container + " spacer"}>
@@ -16,25 +25,7 @@ export default function Header() {
 						alt="Tech logo"
 					/>
 				</Link>
-				<nav className={classes.nav}>
-					<ul className={classes["nav-items"]}>
-						<li className={classes["nav-item"]}>
-							<Link href="/">Home</Link>
-						</li>
-						<li className={classes["nav-item"]}>
-							<Link href="/products">Products</Link>
-						</li>
-						<li className={classes["nav-item"]}>
-							<p>Blog</p>
-						</li>
-						<li className={classes["nav-item"]}>
-							<Link href="/FAQ">FAQ</Link>
-						</li>
-						<li className={classes["nav-item"]}>
-							<p>Contact Us</p>
-						</li>
-					</ul>
-				</nav>
+				<HeaderNav setIsBackdropVisible={setIsBackdropVisible} />
 				<ul className={classes["header-tools"]}>
 					<li className={classes["header-tool"]}>
 						<button className={classes.search}></button>
@@ -47,6 +38,11 @@ export default function Header() {
 					</li>
 				</ul>
 			</div>
+			{isBackdropVisible &&
+				ReactDOM.createPortal(
+					<Backdrop />,
+					document.getElementById("react-portals")
+				)}
 		</header>
 	)
 }

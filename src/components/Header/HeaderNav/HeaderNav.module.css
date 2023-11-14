@@ -1,0 +1,23 @@
+.nav {
+	display: flex;
+	align-items: center;
+}
+
+.nav-item {
+	display: flex;
+	align-items: center;
+	height: 100px;
+	padding: 8px;
+}
+
+.nav-items {
+	display: flex;
+	gap: 48px;
+}
+
+.nav-item a {
+	color: var(--black, #0c0c0c);
+	text-decoration: none;
+	padding: 8px;
+	font-size: 18px;
+}
