@@ -1,0 +1,61 @@
+.input-con {
+	position: relative;
+}
+
+.input-con .input {
+	width: 288px;
+	height: 48px;
+	padding: 12px 36px;
+	background: transparent;
+	color: var(--gray-10, #f9f9f9);
+	border: 1px solid var(--gray-10, #f9f9f9);
+	border-radius: 8px;
+}
+
+.person {
+	position: absolute;
+	top: 50%;
+	left: 12px;
+	transform: translateY(-40%);
+	opacity: 1;
+	transition: opacity 0.3s;
+}
+
+.arrow {
+	position: absolute;
+	right: 20px;
+	top: 50%;
+	transform: translateY(-40%);
+	opacity: 1;
+	transition: opacity 0.3s;
+}
+
+.input-con .input:focus ~ .arrow {
+	opacity: 0;
+}
+.input-con .input:focus ~ .person {
+	opacity: 0;
+}
+
+.socials {
+	display: flex;
+	gap: 16px;
+	align-items: center;
+}
+
+.facebook,
+.twitter,
+.instagram,
+.yt {
+	width: 32px;
+	height: 32px;
+	filter: grayscale(100%);
+	transition: filter 0.3s ease-in-out;
+}
+
+.facebook:hover,
+.twitter:hover,
+.instagram:hover,
+.yt:hover {
+	filter: none;
+}

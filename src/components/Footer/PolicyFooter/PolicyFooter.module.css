@@ -1,0 +1,30 @@
+.policy {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 16px 0;
+	font-size: 12px;
+	font-weight: 500;
+}
+
+.copyright {
+	display: flex;
+	align-items: center;
+	gap: 9px;
+}
+
+.copyright span:first-child {
+	font-size: 28px;
+	font-weight: 200;
+}
+
+.info {
+	display: flex;
+	align-items: center;
+	gap: 48px;
+}
+
+.info a {
+	color: var(--gray-40, #cbcbcb);
+	text-decoration: none;
+}

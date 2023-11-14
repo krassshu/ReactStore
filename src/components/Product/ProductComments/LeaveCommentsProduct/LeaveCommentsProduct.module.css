@@ -3,6 +3,7 @@
 	flex-direction: column;
 	align-items: flex-start;
 	gap: 24px;
+	width: 288px;
 }
 
 .desc {
@@ -15,13 +16,19 @@
 	font-family: "Inter", sans-serif;
 	width: 288px;
 	height: 48px;
-	padding: 4px 24px;
+	padding: 6px 24px;
 	border-radius: 8px;
 	border: 1px solid var(--gray-60, #9e9e9e);
 	background: var(--white, #fff);
 	font-size: 14px;
 	font-weight: 400;
 	resize: none;
+	transition: height 0.3s;
+}
+
+.comment-input:focus,
+.comment-input.hasContent {
+	height: 200px;
 }
 
 .comments-btn {

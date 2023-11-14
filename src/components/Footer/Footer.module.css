@@ -1,0 +1,6 @@
+.footer {
+	width: 100%;
+	background: var(--primary-900, #021736);
+	color: var(--gray-40, #cbcbcb);
+	margin-top: 48px;
+}
