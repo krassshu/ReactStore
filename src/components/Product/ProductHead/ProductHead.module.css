@@ -1,0 +1,5 @@
+.main-content {
+	display: flex;
+	gap: 24px;
+	margin: 40px 0;
+}

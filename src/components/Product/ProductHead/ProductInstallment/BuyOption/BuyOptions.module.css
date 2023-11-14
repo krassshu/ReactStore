@@ -1,0 +1,44 @@
+.buy-option {
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+	width: 100%;
+	flex-grow: 2;
+}
+
+.monthly-installment {
+	display: flex;
+	color: var(--black, #0c0c0c);
+	font-size: 14px;
+	font-weight: 300;
+}
+
+.monthly-installment p {
+	color: var(--gray-70, #717171);
+	font-size: 12px;
+	font-weight: 300;
+}
+
+.month-box {
+	display: flex;
+	justify-content: space-between;
+}
+
+.month {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 60px;
+	height: 51px;
+	padding: 7px;
+	border-radius: 4px;
+	border: 1px solid var(--gray-30, #ededed);
+	background: var(--white, #fff);
+}
+
+.installments-desc {
+	color: var(--gray-90, #444);
+	font-size: 12px;
+	font-weight: 300;
+}

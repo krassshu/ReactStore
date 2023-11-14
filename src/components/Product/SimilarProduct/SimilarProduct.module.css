@@ -1,0 +1,31 @@
+.products {
+	margin: 32px 0;
+}
+
+.products h4 {
+	margin-bottom: 16px;
+}
+
+.customPrevArrow {
+	top: 50%;
+	left: 0;
+}
+
+.customNextArrow {
+	top: 50%;
+	right: 0;
+}
+
+.arrow {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--white, #fff);
+	width: 32px;
+	height: 32px;
+	background-color: transparent;
+	border-radius: 100px;
+	border: none;
+	z-index: 99;
+}

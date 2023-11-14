@@ -1,0 +1,12 @@
+.star {
+	display: flex;
+	width: 43px;
+	padding: 3px 7px;
+	justify-content: center;
+	align-items: center;
+	border-radius: 4px;
+	background: var(--primary-500, #063a88);
+	color: var(--white, #fff);
+	font-size: 12px;
+	font-weight: 500;
+}

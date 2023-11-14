@@ -1,0 +1,5 @@
+.gallery-wrapper {
+	display: flex;
+	flex-grow: 10;
+	width: 496px;
+}

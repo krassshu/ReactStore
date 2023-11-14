@@ -1,8 +1,12 @@
 .breadcrumbs {
 	display: flex;
 	align-items: center;
-	color: var(--gray-70, #717171);
 	margin-top: 24px;
+}
+
+.breadcrumbs a {
+	text-decoration: none;
+	color: var(--gray-70, #717171);
 }
 
 .arrow {
@@ -13,8 +17,8 @@
 }
 
 .active {
-	color: var(--primary, #0c68f4);
+	color: var(--primary, #0c68f4) !important;
 	padding: 4px 0px;
 	border-bottom: 1px solid var(--primary, #0c68f4);
-	cursor: pointer;
+	cursor: default;
 }

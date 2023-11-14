@@ -1,0 +1,24 @@
+.wrapper {
+	padding-left: 8px;
+}
+
+.wrapper ul {
+	list-style: initial;
+	list-style-position: inside;
+	color: var(--gray-70, #717171);
+	font-size: 14px;
+	font-weight: 500;
+}
+.item {
+	line-height: 34px;
+}
+
+.item p {
+	display: inline;
+	text-transform: capitalize;
+}
+
+.item p span {
+	margin-left: 4px;
+	color: var(--black, #0c0c0c);
+}
