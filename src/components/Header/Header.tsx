@@ -9,6 +9,7 @@ import classes from "./Header.module.css"
 import logoImg from "@/assets/logo.png"
 import Backdrop from "../UI/Backdrop/Backdrop"
 import HeaderNav from "./HeaderNav/HeaderNav"
+import HeaderTools from "./HeaderTools/HeaderTools"
 
 export default function Header() {
 	const [isBackdropVisible, setIsBackdropVisible] = useState(false)
@@ -26,17 +27,7 @@ export default function Header() {
 					/>
 				</Link>
 				<HeaderNav setIsBackdropVisible={setIsBackdropVisible} />
-				<ul className={classes["header-tools"]}>
-					<li className={classes["header-tool"]}>
-						<button className={classes.search}></button>
-					</li>
-					<li className={classes["header-tool"]}>
-						<button className={classes.basket}></button>
-					</li>
-					<li className={classes["header-tool"]}>
-						<button className={classes.user}></button>
-					</li>
-				</ul>
+				<HeaderTools setIsBackdropVisible={setIsBackdropVisible} />
 			</div>
 			{isBackdropVisible &&
 				ReactDOM.createPortal(

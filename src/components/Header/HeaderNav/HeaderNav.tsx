@@ -1,14 +1,16 @@
 import classes from "./HeaderNav.module.css"
 import Link from "next/link"
-import { usePathname, useSearchParams } from "next/navigation"
-import React, { useEffect, useState } from "react"
+import { usePathname } from "next/navigation"
+import React, { useState } from "react"
 import HeaderProducts from "./HeaderProducts/HeaderProducts"
 
-interface HeaderNavProps {
+export interface HeaderBackgropProps {
 	setIsBackdropVisible: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-export default function HeaderNav({ setIsBackdropVisible }: HeaderNavProps) {
+export default function HeaderNav({
+	setIsBackdropVisible,
+}: HeaderBackgropProps) {
 	const [isBackdropVisible, setIsBackdropVisibleLocal] = useState(false)
 	const pathname = usePathname()
 

@@ -1,0 +1,45 @@
+.wrapper {
+	position: absolute;
+	top: 100px;
+	right: -50%;
+	background: var(--white, #fff);
+	padding: 16px;
+	border-radius: 0px 0px 8px 8px;
+	transform: translateX(40%);
+}
+
+.options {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 24px;
+}
+
+.option a {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	align-self: stretch;
+	text-decoration: none;
+	color: var(--black, #0c0c0c);
+}
+
+.option a:hover {
+	color: var(--primary, #0c68f4);
+}
+
+.user {
+	display: flex;
+	flex-direction: column;
+}
+
+.user-name {
+	color: var(--primary, #0c68f4);
+	font-size: 18px;
+	font-weight: 300;
+}
+
+.user-mail {
+	font-size: 14px;
+	font-weight: 300;
+}

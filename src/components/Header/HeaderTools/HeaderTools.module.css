@@ -1,0 +1,35 @@
+.header-tools {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.header-tool {
+	display: flex;
+	align-items: center;
+	position: relative;
+	padding: 8px;
+}
+
+.header-tool:hover {
+	height: 100px;
+}
+
+.header-tool .button {
+	width: 30px;
+	height: 30px;
+	background: none;
+	border: none;
+}
+
+.header-tool .search {
+	background: center no-repeat url("../../../assets/icons/search-normal.svg");
+}
+
+.header-tool .basket {
+	background: center no-repeat url("../../../assets/icons/bag.svg");
+}
+
+.header-tool .user {
+	background: center no-repeat url("../../../assets/icons/user.svg");
+}
