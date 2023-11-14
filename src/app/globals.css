@@ -221,18 +221,6 @@ body {
 }
 
 /*  Scroll bar  */
-/*body::-webkit-scrollbar {*/
-/*    width: .7em;*/
-/*}*/
-
-/*body::-webkit-scrollbar-track {*/
-/*    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);*/
-/*}*/
-
-/*body::-webkit-scrollbar-thumb {*/
-/*    background-color: darkgrey;*/
-/*    outline: 1px solid slategrey;*/
-/*}*/
 
 code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
