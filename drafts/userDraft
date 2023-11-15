@@ -1,0 +1,34 @@
+{
+	"username": "",
+	"email": "",
+	"password": "",
+	"personals": {
+		"fullName": "",
+		"phone": "",
+		"address": "",
+		"postalCode": ""
+	},
+	"bag": [
+		{
+			"productId": ""
+		}
+	],
+	"orders": [
+		{
+			"orderId": ""
+		}
+	],
+	"wishList": [
+		{}
+	],
+	"privacyTerms": {
+		"cookie": true,
+		"privatyPolice": true
+	},
+	"notification": {
+		"emails": true,
+		"orderDerlivery": true,
+		"pushDevice": true,
+		"productAvailibity": true
+	}
+}

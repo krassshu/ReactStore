@@ -1,0 +1,54 @@
+{
+	"productNane": "",
+	"price": 1123,
+	"lastPrice": 1200,
+	"brand": "",
+	"sold": 0,
+	"stock": 10,
+	"category": "",
+	"rating": [
+		{
+			"like": 2
+		},
+		{
+			"dislike": 0
+		}
+	],
+	"colors": [
+		{
+			"gray": "#959595"
+		},
+		{
+			"space-gray": "#353535"
+		}
+	],
+	" imagePath": [
+		"",
+		""
+	],
+	"technicalDetails": [
+		{
+			"brand": "Apple"
+		},
+		{
+			"model-name": "Macbook Pro"
+		}
+	],
+	"comments": [
+		{
+			"userId": "",
+			"publication-date": "",
+			"comment": "",
+			"commentRating": [
+				{
+					"like": 13
+				},
+				{
+					"dislike": 0
+				}
+			]
+		}
+	],
+	"isDiscound": false,
+	"isNewProduct": true
+}

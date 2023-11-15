@@ -1,0 +1,24 @@
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	gap: 24px;
+	width: 100%;
+	height: 80vh;
+	background-color: #fff;
+}
+
+.container button {
+	background-color: var(--primary);
+
+	padding: 12px 24px;
+	border: none;
+	border-radius: 8px;
+}
+
+.container button a {
+	color: #fff;
+	font-size: 18px;
+	text-decoration: none;
+}

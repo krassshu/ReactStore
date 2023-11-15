@@ -1,0 +1,14 @@
+{
+	"userId": "",
+	"orderCode": "",
+	"orderedProducts": [
+		{
+			"productId": ""
+		}
+	],
+	"orderStatus": "processing",
+	"paymentStatus": "paid",
+	"placedOn": "",
+	"sendAdress": "",
+	"amountPaid": 123
+}
