@@ -1,0 +1,20 @@
+.container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 36px 80px;
+	border-radius: 8px;
+	border: 1px solid #000;
+	background: var(--white, #fff);
+	z-index: 999999;
+}
+
+.tab {
+	width: 100%;
+	border-bottom: 1px solid var(--gray-50, #b4b4b4);
+}

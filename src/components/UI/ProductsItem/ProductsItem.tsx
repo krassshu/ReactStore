@@ -4,12 +4,15 @@ import spacerImg from "@/assets/ui-elements/spacer.svg"
 import Image from "next/image"
 
 export default function ProductsItem(props: any) {
+	// console.log(props)
+
+	console.log(props.img?.[0])
 	return (
 		<div className={classes.item}>
 			<div className={classes["product-img"]}>
 				<Image
-					src={""}
-					alt={"s"}
+					src={props.img?.[0]}
+					alt={props.name}
 				/>
 			</div>
 			<div className={classes.spacer}>

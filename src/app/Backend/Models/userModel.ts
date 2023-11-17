@@ -20,7 +20,7 @@ interface Notification {
 }
 
 interface User extends Document {
-	username: string
+	fullName: string
 	email: string
 	password: string
 	personals?: Personal
@@ -31,39 +31,45 @@ interface User extends Document {
 	notification: Notification
 }
 
-const userSchema: Schema = new Schema({
-	username: { type: String, required: true },
-	email: { type: String, required: true, unique: true },
-	password: { type: String, required: true },
-	personals: {
-		fullName: String,
-		phone: String,
-		address: String,
-		postalCode: String,
-	},
-	bag: [
-		{
-			productId: { type: Types.ObjectId },
-		},
-	],
-	orders: [
-		{
-			orderId: { type: Types.ObjectId },
-		},
-	],
-	wishList: [{ productId: { type: Types.ObjectId } }],
-	privacyTerms: {
-		cookie: { type: Boolean, default: false },
-		privacyPolicy: { type: Boolean, default: false },
-	},
-	notification: {
-		emails: { type: Boolean, default: false },
-		orderDelivery: { type: Boolean, default: false },
-		pushDevice: { type: Boolean, default: false },
-		productAvailability: { type: Boolean, default: false },
-	},
-})
+let User: mongoose.Model<User>
 
-const UserModel = mongoose.model<User>("User", userSchema)
+try {
+	// Sprawdź, czy model już istnieje
+	User = mongoose.model<User>("User")
+} catch (e) {
+	const userSchema: Schema = new Schema({
+		fullName: { type: String, required: true },
+		email: { type: String, required: true, unique: true },
+		password: { type: String, required: true },
+		personals: {
+			fullName: String,
+			phone: String,
+			address: String,
+			postalCode: String,
+		},
+		bag: [
+			{
+				productId: { type: Types.ObjectId },
+			},
+		],
+		orders: [
+			{
+				orderId: { type: Types.ObjectId },
+			},
+		],
+		wishList: [{ productId: { type: Types.ObjectId } }],
+		privacyTerms: {
+			cookie: { type: Boolean, default: false },
+			privacyPolicy: { type: Boolean, default: false },
+		},
+		notification: {
+			emails: { type: Boolean, default: false },
+			orderDelivery: { type: Boolean, default: false },
+			pushDevice: { type: Boolean, default: false },
+			productAvailability: { type: Boolean, default: false },
+		},
+	})
+	User = mongoose.model<User>("User", userSchema)
+}
 
-export default UserModel
+export default User
