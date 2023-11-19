@@ -1,0 +1,25 @@
+.addBag {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 8px;
+	height: 48px;
+	padding: 8px 16px;
+	background-color: transparent;
+	color: var(--primary, #0c68f4);
+	border: 2px solid var(--primary, #0c68f4);
+	border-radius: 8px;
+	font-size: 16px;
+	font-weight: 400;
+	transition: background-color 0.3s;
+}
+
+.addBag:hover {
+	background-color: var(--primary, #0c68f4);
+	color: var(--white, #fff);
+}
+
+.addWishList {
+	background-color: transparent;
+	border: none;
+}

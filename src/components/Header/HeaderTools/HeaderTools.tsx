@@ -4,6 +4,9 @@ import classes from "./HeaderTools.module.css"
 import HeaderProfile from "./HeaderProfile/HeaderProfile"
 import HeaderBag from "./HeaderBag/HeaderBag"
 
+import { AnimatePresence, motion } from "framer-motion"
+import Badge from "@mui/material/Badge"
+
 export default function HeaderTools({
 	setIsBackdropVisible,
 }: HeaderBackgropProps) {
@@ -33,8 +36,25 @@ export default function HeaderTools({
 				onMouseOver={() => handleMouseOver(0)}
 				onMouseOut={handleMouseOut}
 			>
-				<button className={`${classes.button} ${classes.basket}`}></button>
-				{openTool[0] && <HeaderBag />}
+				<Badge
+					badgeContent={10}
+					color="primary"
+					anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+					max={9}
+				>
+					<button className={`${classes.button} ${classes.basket}`}></button>
+				</Badge>
+				<AnimatePresence>
+					{openTool[0] && (
+						<motion.div
+							initial={{ opacity: 0 }}
+							animate={{ opacity: 1 }}
+							exit={{ opacity: 0 }}
+						>
+							<HeaderBag />
+						</motion.div>
+					)}
+				</AnimatePresence>
 			</li>
 			<li
 				className={classes["header-tool"]}
@@ -42,7 +62,17 @@ export default function HeaderTools({
 				onMouseOut={handleMouseOut}
 			>
 				<button className={`${classes.button} ${classes.user}`}></button>
-				{openTool[1] && <HeaderProfile />}
+				<AnimatePresence>
+					{openTool[1] && (
+						<motion.div
+							initial={{ opacity: 0 }}
+							animate={{ opacity: 1 }}
+							exit={{ opacity: 0 }}
+						>
+							<HeaderProfile />
+						</motion.div>
+					)}
+				</AnimatePresence>
 			</li>
 		</ul>
 	)

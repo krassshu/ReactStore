@@ -1,20 +1,15 @@
-"use client"
-
 import classes from "./Backdrop.module.css"
-import React, { useEffect, useState } from "react"
+import { AnimatePresence, motion } from "framer-motion"
 
 export default function Backdrop() {
-	const [isVisible, setIsVisible] = useState(false)
-
-	useEffect(() => {
-		const timeoutId = setTimeout(() => {
-			setIsVisible(true)
-		}, 0)
-
-		return () => clearTimeout(timeoutId)
-	}, [])
-
 	return (
-		<div className={`${classes.backdrop} ${isVisible && classes.fadeIn}`} />
+		<AnimatePresence>
+			<motion.div
+				className={`${classes.backdrop}`}
+				initial={{ opacity: 0 }}
+				animate={{ opacity: 0.64 }}
+				exit={{ opacity: 0 }}
+			></motion.div>
+		</AnimatePresence>
 	)
 }

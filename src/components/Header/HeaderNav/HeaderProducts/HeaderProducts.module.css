@@ -1,7 +1,7 @@
 .menu {
 	position: absolute;
 	display: flex;
-	top: 83px;
+	top: 100px;
 	left: 0;
 	background: var(--white, #fff);
 	border-radius: 0 0 8px 8px;

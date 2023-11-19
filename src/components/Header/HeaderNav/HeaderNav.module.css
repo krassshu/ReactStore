@@ -3,16 +3,17 @@
 	align-items: center;
 }
 
+.nav-items {
+	display: flex;
+}
+
 .nav-item {
 	display: flex;
 	align-items: center;
+	justify-content: center;
+	min-width: 148px;
 	height: 100px;
 	padding: 8px;
-}
-
-.nav-items {
-	display: flex;
-	gap: 48px;
 }
 
 .nav-item a {

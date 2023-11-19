@@ -1,14 +1,18 @@
+import { countRating } from "@/components/Util/rating"
 import classes from "./ProductDetails.module.css"
 
-export default function ProductDetails() {
+export default function ProductDetails(props: any) {
+	const { like = 0, dislike = 0 } = props.rating || {}
+	const rating = countRating(like, dislike)
+
 	return (
 		<>
-			<h6 className={classes["model-info"]}>Iphone 14 pro max 256 gb</h6>
+			<h6 className={classes["model-info"]}>{props.productName}</h6>
 			<div className={classes.meta}>
-				<p className={classes.price}>123</p>
+				<p className={classes.price}>{props.price}</p>
 				<div className={classes.rating}>
 					<i className={classes.star}></i>
-					<p className={classes["rating-range"]}>4.3</p>
+					<p className={classes["rating-range"]}>{rating}</p>
 				</div>
 			</div>
 		</>

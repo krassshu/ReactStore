@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation"
 import React, { useState } from "react"
 import HeaderProducts from "./HeaderProducts/HeaderProducts"
 
+import { AnimatePresence, motion } from "framer-motion"
 export interface HeaderBackgropProps {
 	setIsBackdropVisible: React.Dispatch<React.SetStateAction<boolean>>
 }
@@ -39,6 +40,7 @@ export default function HeaderNav({
 					className={classes["nav-item"]}
 					onMouseOver={handleMouseOver}
 					onMouseOut={handleMouseOut}
+					onClick={handleMouseOut}
 				>
 					<Link
 						href="/products"
@@ -46,8 +48,17 @@ export default function HeaderNav({
 					>
 						Products
 					</Link>
-
-					{isBackdropVisible && <HeaderProducts classes={"show"} />}
+					<AnimatePresence>
+						{isBackdropVisible && (
+							<motion.div
+								initial={{ opacity: 0 }}
+								animate={{ opacity: 1 }}
+								exit={{ opacity: 0 }}
+							>
+								<HeaderProducts classes={"show"} />
+							</motion.div>
+						)}
+					</AnimatePresence>
 				</li>
 				<li className={classes["nav-item"]}>
 					<p>Blog</p>

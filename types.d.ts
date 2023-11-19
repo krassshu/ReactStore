@@ -10,3 +10,16 @@ type Login = {
 	password: string
 	keepLogin: boolean
 }
+
+type ProductItem = {
+	_id?: string
+	id: string
+	imagePath: []
+	productName: string
+	price: number
+	lastPrice: number
+	rating: {
+		like: number
+		dislike: number
+	}
+}

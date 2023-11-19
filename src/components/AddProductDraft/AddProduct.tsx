@@ -8,7 +8,7 @@ export default function AddProduct() {
 	const [price, setPrice] = useState(0)
 	const [lastPrice, setLastPrice] = useState(0)
 	const [brand, setBrand] = useState("")
-	const [stock, setStock] = useState(0)
+	const [stock, setStock] = useState(1000)
 	const [category, setCategory] = useState("")
 	const [isDiscount, setIsDiscount] = useState(false)
 	const [isNewProduct, setIsNewProduct] = useState(false)
@@ -42,15 +42,15 @@ export default function AddProduct() {
 		formData.append("image", imageFile)
 
 		const imgbbAPIKey = "830303b9d431ef94c5921a80bc8d0301"
-		console.log(imgbbAPIKey)
 		try {
 			const response = await axios.post(
 				`https://api.imgbb.com/1/upload?key=${imgbbAPIKey}`,
 				formData
 			)
+			console.log(response)
 			const imageUrls: Image = {
 				image: response.data.data.url,
-				medium: response.data.data.medium.url,
+				medium: response.data.data.image.url,
 				thumb: response.data.data.thumb.url,
 			}
 			return imageUrls
@@ -67,9 +67,10 @@ export default function AddProduct() {
 			const imageUrls = await Promise.all(
 				images.map((image) => uploadImageToImgbb(image))
 			)
-			console.log(imageUrls)
-			if (!imageUrls) {
+
+			if (!imageUrls[0]) {
 				console.error("nie wysłało sie")
+				setLoading(false)
 				return
 			}
 			const formData = new FormData()
@@ -234,6 +235,7 @@ export default function AddProduct() {
 			{/* Images */}
 			<input
 				type="file"
+				accept="image/png, image/jpeg"
 				onChange={(e) => {
 					if (e.target.files) {
 						setImages(Array.from(e.target.files))

@@ -22,6 +22,8 @@ export default function NewProducts() {
 		fetchData()
 	}, [])
 
+	console.log(products)
+
 	return (
 		<section className={classes.onSale}>
 			<SectionHeader
@@ -29,12 +31,15 @@ export default function NewProducts() {
 				url="dasdas"
 			/>
 			<div className={classes.wrapper}>
-				{products.map((prod: any) => (
+				{products.map((prod: ProductItem) => (
 					<ProductsItem
 						key={prod._id}
 						id={prod._id}
-						img={prod.imagePath}
-						name={prod.productName}
+						imagePath={prod.imagePath}
+						productName={prod.productName}
+						price={prod.price}
+						lastPrice={prod.lastPrice}
+						rating={prod.rating}
 					/>
 				))}
 			</div>

@@ -9,6 +9,9 @@
 	align-items: center;
 	position: relative;
 	padding: 8px;
+	height: 46px;
+	height: 100px;
+	transition: height 0s 1ms;
 }
 
 .header-tool:hover {
