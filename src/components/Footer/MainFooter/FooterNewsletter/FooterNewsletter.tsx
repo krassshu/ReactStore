@@ -91,19 +91,19 @@ export default function FooterNewsletter() {
 							>
 								<stop
 									offset="0%"
-									stop-color="#FED576"
+									stopColor="#FED576"
 								></stop>
 								<stop
 									offset="27.394%"
-									stop-color="#F47133"
+									stopColor="#F47133"
 								></stop>
 								<stop
 									offset="72.635%"
-									stop-color="#BC3081"
+									stopColor="#BC3081"
 								></stop>
 								<stop
 									offset="100%"
-									stop-color="#A236B9"
+									stopColor="#A236B9"
 								></stop>
 							</radialGradient>
 							<linearGradient
@@ -115,12 +115,12 @@ export default function FooterNewsletter() {
 							>
 								<stop
 									offset="0%"
-									stop-color="#4B67D4"
+									stopColor="#4B67D4"
 								></stop>
 								<stop
 									offset="100%"
-									stop-color="#4B67D4"
-									stop-opacity="0"
+									stopColor="#4B67D4"
+									stopOpacity="0"
 								></stop>
 							</linearGradient>
 							<radialGradient
@@ -133,19 +133,19 @@ export default function FooterNewsletter() {
 							>
 								<stop
 									offset="0%"
-									stop-color="#FED576"
+									stopColor="#FED576"
 								></stop>
 								<stop
 									offset="31.02%"
-									stop-color="#F47133"
+									stopColor="#F47133"
 								></stop>
 								<stop
 									offset="68.037%"
-									stop-color="#DA2E7D"
+									stopColor="#DA2E7D"
 								></stop>
 								<stop
 									offset="100%"
-									stop-color="#BC3081"
+									stopColor="#BC3081"
 								></stop>
 							</radialGradient>
 						</defs>

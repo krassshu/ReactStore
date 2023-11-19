@@ -46,10 +46,14 @@ export async function POST(req: Request) {
 			throw new Error("JWT_SECRET_KEY is not defined in environment variables.")
 		}
 
+		const generatedTokenDate = new Date()
+
 		const token = jwt.sign(
 			{
 				_id: user.id,
 				email: user.email,
+				tokenExpire: expireSeconds,
+				generatedTokenDate: generatedTokenDate,
 			},
 			secret,
 			{
@@ -57,7 +61,7 @@ export async function POST(req: Request) {
 				expiresIn: expireSeconds,
 			}
 		)
-
+		console.log(token)
 		const cookieOptions = {
 			httpOnly: true,
 			maxAge: expireSeconds,

@@ -8,7 +8,7 @@ export async function POST(req: Request) {
 	try {
 		const { fullName, email, password, policy }: Partial<Register> =
 			await req.json()
-
+		console.log(fullName, email, password, policy)
 		if (!fullName || !email || !password || !policy) {
 			return Response.json(
 				{ message: "Missing required fields." },

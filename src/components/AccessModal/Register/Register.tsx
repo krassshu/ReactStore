@@ -5,11 +5,22 @@ import { useForm, SubmitHandler } from "react-hook-form"
 import facebookIcon from "@/assets/icons/_Facebook.svg"
 import googleIcon from "@/assets/icons/google.svg"
 import Link from "next/link"
+import axios from "axios"
 
-export default function Register() {
+interface LoginProps {
+	setIsLoading: React.Dispatch<React.SetStateAction<boolean>>
+	setIsError: React.Dispatch<React.SetStateAction<boolean>>
+	setIsSuccess: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+export default function Register({
+	setIsLoading,
+	setIsError,
+	setIsSuccess,
+}: LoginProps) {
 	const { register, handleSubmit } = useForm<Register>()
 
-	const onSubmit: SubmitHandler<Register> = (data) => {
+	const onSubmit: SubmitHandler<Register> = async (data) => {
 		const formData = new FormData()
 
 		formData.append("fullname", data.fullName)
@@ -18,6 +29,19 @@ export default function Register() {
 		formData.append("keepLogin", String(data.policy))
 
 		console.log(data)
+
+		try {
+			setIsLoading(true)
+
+			const response = await axios.post("/api/register", data)
+			console.log(response)
+			setIsLoading(false)
+			setIsSuccess(true)
+		} catch (error: any) {
+			setIsLoading(false)
+			setIsError(true)
+			console.error(error)
+		}
 	}
 
 	return (

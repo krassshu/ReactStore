@@ -4,11 +4,23 @@ import { useForm, SubmitHandler } from "react-hook-form"
 
 import facebookIcon from "@/assets/icons/_Facebook.svg"
 import googleIcon from "@/assets/icons/google.svg"
+import axios from "axios"
 
-export default function Login() {
+interface Login {
+	email: string
+	password: string
+	keepLogin: boolean
+}
+
+interface LoginProps {
+	setIsLoading: React.Dispatch<React.SetStateAction<boolean>>
+	setIsError: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+export default function Login({ setIsLoading, setIsError }: LoginProps) {
 	const { register, handleSubmit } = useForm<Login>()
 
-	const onSubmit: SubmitHandler<Login> = (data) => {
+	const onSubmit: SubmitHandler<Login> = async (data) => {
 		const formData = new FormData()
 
 		formData.append("email", data.email)
@@ -16,6 +28,21 @@ export default function Login() {
 		formData.append("keepLogin", String(data.keepLogin))
 
 		console.log(data)
+
+		try {
+			setIsLoading(true)
+
+			const response = await axios.post("/api/login", data)
+			console.log(response)
+			setTimeout(() => {
+				setIsLoading(false)
+				location.reload()
+			}, 500)
+		} catch (error: any) {
+			setIsLoading(false)
+			setIsError(false)
+			console.error(error)
+		}
 	}
 
 	return (

@@ -1,5 +1,5 @@
 .container {
-	position: absolute;
+	position: fixed;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
@@ -7,14 +7,23 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	gap: 16px;
 	padding: 36px 80px;
 	border-radius: 8px;
-	border: 1px solid #000;
 	background: var(--white, #fff);
 	z-index: 999999;
+	opacity: 1;
 }
 
 .tab {
 	width: 100%;
 	border-bottom: 1px solid var(--gray-50, #b4b4b4);
+}
+
+.error {
+	background-color: var(--error-light, #fae7eb);
+}
+
+.done {
+	background-color: var(--success-light, #d1f7e5);
 }

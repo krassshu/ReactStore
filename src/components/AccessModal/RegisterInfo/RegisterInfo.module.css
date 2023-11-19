@@ -1,0 +1,32 @@
+.icon {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 120px;
+	height: 120px;
+	border-radius: 100%;
+	-webkit-box-shadow: 0px 0px 8px 0px rgba(66, 68, 90, 1);
+	-moz-box-shadow: 0px 0px 8px 0px rgba(66, 68, 90, 1);
+	box-shadow: 0px 0px 8px 0px rgba(66, 68, 90, 1);
+}
+
+.title {
+	text-align: center;
+	font-size: 32px;
+	font-weight: 500;
+}
+
+.mess {
+	color: var(--gray-80, #505050);
+	text-align: center;
+	font-size: 18px;
+	font-weight: 300;
+}
+
+.errorText {
+	color: var(--error, #c91433);
+}
+
+.doneText {
+	color: var(--success, #146c43);
+}
