@@ -1,11 +1,11 @@
 import React, { ReactNode } from "react"
 import classes from "./Container.module.css"
 
-interface ContainerProps {
+export interface ChildrenI {
 	children: ReactNode
 }
 
-const Container: React.FC<ContainerProps> = ({ children }) => {
+const Container: React.FC<ChildrenI> = ({ children }) => {
 	return <div className={classes.container}>{children}</div>
 }
 

@@ -5,6 +5,7 @@ import classes from "./HeaderBag.module.css"
 import shoppingIcon from "@/assets/icons/shopping-cart.svg"
 
 export default function HeaderBag() {
+	console.log("object")
 	return (
 		<div className={classes.wrapper}>
 			<span className={classes.amount}>3 items</span>

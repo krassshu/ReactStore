@@ -13,7 +13,7 @@ export default function HeaderProfile() {
 		<div className={classes.wrapper}>
 			<ul className={classes.options}>
 				<li className={classes.option}>
-					<Link href={"#"}>
+					<Link href={"/account/personal-data"}>
 						<Image
 							src={userIcon}
 							alt={"user icon"}
