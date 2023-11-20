@@ -22,8 +22,6 @@ export default function NewProducts() {
 		fetchData()
 	}, [])
 
-	console.log(products)
-
 	return (
 		<section className={classes.onSale}>
 			<SectionHeader

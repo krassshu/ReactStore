@@ -53,7 +53,7 @@ export default function ProductsItem(props: any) {
 						exit={{ opacity: 0 }}
 						className={classes.bag}
 					>
-						<AddProductToBag />
+						<AddProductToBag id={props.id} />
 					</motion.div>
 				)}
 			</AnimatePresence>

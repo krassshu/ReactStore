@@ -39,7 +39,7 @@ export default function Header() {
 					>
 						<Backdrop />
 					</motion.div>,
-					document.getElementById("react-portals")
+					document.getElementById("react-portals") ?? document.body
 				)}
 		</header>
 	)

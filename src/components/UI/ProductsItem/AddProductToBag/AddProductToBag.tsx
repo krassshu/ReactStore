@@ -1,9 +1,17 @@
 import { useState } from "react"
 import classes from "./AddProductToBag.module.css"
+import { useDispatch } from "react-redux"
+import { addToCart } from "../../../../redux/cartSlice"
 
-export default function AddProductToBag() {
+export default function AddProductToBag({ id }: { id: string }) {
 	const [addToWishList, setAddToWishList] = useState(false)
 	const [isHoverButton, setIsHoverButton] = useState(false)
+
+	const dispatch = useDispatch()
+
+	const handleAddToCart = (productId: string) => {
+		dispatch(addToCart(productId))
+	}
 
 	return (
 		<>
@@ -11,6 +19,7 @@ export default function AddProductToBag() {
 				className={classes.addBag}
 				onMouseOver={() => setIsHoverButton(true)}
 				onMouseOut={() => setIsHoverButton(false)}
+				onClick={() => handleAddToCart(id)}
 			>
 				<div className={classes.shoppingSVG}>
 					<svg

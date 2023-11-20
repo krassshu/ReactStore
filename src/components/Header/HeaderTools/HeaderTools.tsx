@@ -1,20 +1,20 @@
-import { useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { HeaderBackgropProps } from "../HeaderNav/HeaderNav"
 import classes from "./HeaderTools.module.css"
 import HeaderProfile from "./HeaderProfile/HeaderProfile"
 import HeaderBag from "./HeaderBag/HeaderBag"
-
 import { AnimatePresence, motion } from "framer-motion"
 import Badge from "@mui/material/Badge"
 import ReactDOM from "react-dom"
 import AccessModal from "@/components/AccessModal/AccessModal"
 import FullBackdrop from "@/components/UI/FullBackdrop/FullBackdrop"
+import { useSelector } from "react-redux"
 
 export default function HeaderTools({
 	setIsBackdropVisible,
 }: HeaderBackgropProps) {
 	const [openTool, setOpenTool] = useState([false, false])
-	const [isLogin, setIsLogin] = useState(false)
+	const [isLogin, setIsLogin] = useState(true)
 	const [openLogin, setOpenLogin] = useState(false)
 
 	const handleMouseOver = (index: number) => {
@@ -34,6 +34,7 @@ export default function HeaderTools({
 	const onOpenLogin = () => {
 		setOpenLogin(!openLogin)
 	}
+	const cartItems = useSelector((state: any) => state.cart.items)
 
 	return (
 		<>
@@ -41,14 +42,13 @@ export default function HeaderTools({
 				<li className={classes["header-tool"]}>
 					<button className={`${classes.button} ${classes.search}`}></button>
 				</li>
-
 				<li
 					className={classes["header-tool"]}
 					onMouseOver={() => handleMouseOver(0)}
 					onMouseOut={handleMouseOut}
 				>
 					<Badge
-						badgeContent={10}
+						badgeContent={cartItems.length}
 						color="primary"
 						anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
 						max={9}
@@ -67,6 +67,7 @@ export default function HeaderTools({
 						)}
 					</AnimatePresence>
 				</li>
+
 				{isLogin ? (
 					<li
 						className={classes["header-tool"]}
@@ -100,7 +101,7 @@ export default function HeaderTools({
 					<FullBackdrop setOpenLogin={setOpenLogin}>
 						<AccessModal />
 					</FullBackdrop>,
-					document.getElementById("react-portals")
+					document.getElementById("react-portals") ?? document.body
 				)}
 		</>
 	)
