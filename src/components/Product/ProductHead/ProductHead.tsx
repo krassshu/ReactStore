@@ -6,7 +6,7 @@ import ProductInstallment from "./ProductInstallment/ProductInstallment"
 export default function ProductHead() {
 	return (
 		<div className={classes["main-content"]}>
-			<ProductGallery items={[]} />
+			<ProductGallery />
 			<ProductMainInfo />
 			<ProductInstallment />
 		</div>

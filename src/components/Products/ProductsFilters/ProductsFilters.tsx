@@ -1,5 +1,5 @@
 import BasedFilter from "./BasedFilter/BasedFilter"
-import DiscoundFilters from "./DiscoundFilters/DiscoundFilters"
+import DiscountFilters from "./DiscountFilters/DiscountFilters"
 import PriceFilters from "./PriceFilters/PriceFilters"
 import classes from "./ProductsFilters.module.css"
 
@@ -11,7 +11,7 @@ export default function ProductsFilters() {
 				<button className={classes.clearBtn}>Clear all</button>
 			</div>
 			<BasedFilter />
-			<DiscoundFilters />
+			<DiscountFilters />
 			<PriceFilters />
 		</aside>
 	)

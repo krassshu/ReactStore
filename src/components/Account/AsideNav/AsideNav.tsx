@@ -5,7 +5,7 @@ import userCricleIcon from "@/assets/icons/profile-circle-gray.svg"
 import userEditIcon from "@/assets/icons/user-edit.svg"
 import oredersIcon from "@/assets/icons/bag.svg"
 import wishListIcon from "@/assets/icons/heart-def.svg"
-import discoundIcon from "@/assets/icons/gift.svg"
+import discountIcon from "@/assets/icons/gift.svg"
 import securityIcon from "@/assets/icons/security-safe.svg"
 import notificationIcon from "@/assets/icons/notification.svg"
 import contactIcon from "@/assets/icons/24-support.svg"
@@ -69,15 +69,15 @@ export default function AsideNav() {
 				</li>
 				<li
 					className={`${classes.element} ${
-						pathName == "/account/discound" ? classes.active : ""
+						pathName == "/account/discount" ? classes.active : ""
 					}`}
 				>
-					<Link href={"/account/discound"}>
+					<Link href={"/account/discount"}>
 						<Image
-							src={discoundIcon}
+							src={discountIcon}
 							alt={""}
 						/>
-						Discound
+						Discount
 					</Link>
 				</li>
 				<li

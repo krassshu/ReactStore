@@ -1,8 +1,8 @@
-import classes from "./Discound.module.css"
+import classes from "./Discount.module.css"
 import Container from "@/components/UI/Container/Container"
 import Head from "../Head/Head"
 
-export default function Discound() {
+export default function Discount() {
 	return (
 		<Container>
 			<Head

@@ -1,5 +1,5 @@
-import DiscoundC from "@/components/Account/Discound/Discound"
+import DiscountC from "@/components/Account/Discount/Discount"
 
-export default function Discound() {
-	return <DiscoundC />
+export default function Discount() {
+	return <DiscountC />
 }
