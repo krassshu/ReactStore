@@ -10,6 +10,42 @@ import keyIcon from "@/assets/icons/key.svg"
 import homeIcon from "@/assets/icons/home-2.svg"
 import signpostIcon from "@/assets/icons/signpost.svg"
 import Container from "@/components/UI/Container/Container"
+import AccountInput, {
+	AccountInputProps,
+} from "@/components/Account/AccountInput/AccountInput"
+
+const inputsData: AccountInputProps[] = [
+	{
+		imageProps: { src: userIcon, alt: "user icon" },
+		inputProps: { type: "text", id: "fullName", placeholder: "" },
+		title: "Full name",
+	},
+	{
+		imageProps: { src: directIcon, alt: "direct icon" },
+		inputProps: { type: "email", id: "email", placeholder: "" },
+		title: "E-mail Address",
+	},
+	{
+		imageProps: { src: phoneIcon, alt: "phone icon" },
+		inputProps: { type: "tel", id: "phone", placeholder: "" },
+		title: "Phone number",
+	},
+	{
+		imageProps: { src: keyIcon, alt: "key icon" },
+		inputProps: { type: "password", id: "password", placeholder: "" },
+		title: "Password",
+	},
+	{
+		imageProps: { src: homeIcon, alt: "home icon" },
+		inputProps: { type: "text", id: "address", placeholder: "" },
+		title: "Address",
+	},
+	{
+		imageProps: { src: signpostIcon, alt: "sign post icon" },
+		inputProps: { type: "text", id: "postal", placeholder: "" },
+		title: "Postal code",
+	},
+]
 
 export default function PersonalData() {
 	return (
@@ -19,144 +55,14 @@ export default function PersonalData() {
 				desc={"Verify your identity"}
 			/>
 			<div className={classes.wrapper}>
-				<label
-					htmlFor="fullName"
-					className={classes.inputLabel}
-				>
-					<span className={classes.label}>Full name</span>
-					<div className={classes.inputCon}>
-						<Image
-							src={userIcon}
-							alt={"user icon"}
-						/>
-						<input
-							type="text"
-							id={"fullName"}
-							placeholder={""}
-						/>
-						<button className={classes.editBtn}>
-							<Image
-								src={editIcon}
-								alt={"edit icon"}
-							/>
-						</button>
-					</div>
-				</label>
-				<label
-					htmlFor="email"
-					className={classes.inputLabel}
-				>
-					<span className={classes.label}>E-mail Address</span>
-					<div className={classes.inputCon}>
-						<Image
-							src={directIcon}
-							alt={"direct icon"}
-						/>
-						<input
-							type="teemailxt"
-							id={"email"}
-							placeholder={""}
-						/>
-						<button className={classes.editBtn}>
-							<Image
-								src={editIcon}
-								alt={"edit icon"}
-							/>
-						</button>
-					</div>
-				</label>
-				<label
-					htmlFor="phone"
-					className={classes.inputLabel}
-				>
-					<span className={classes.label}>Phone number</span>
-					<div className={classes.inputCon}>
-						<Image
-							src={phoneIcon}
-							alt={"phone icon"}
-						/>
-						<input
-							type="tel"
-							id={"phone"}
-							placeholder={""}
-						/>
-						<button className={classes.editBtn}>
-							<Image
-								src={editIcon}
-								alt={"edit icon"}
-							/>
-						</button>
-					</div>
-				</label>
-				<label
-					htmlFor="password"
-					className={classes.inputLabel}
-				>
-					<span className={classes.label}>Password</span>
-					<div className={classes.inputCon}>
-						<Image
-							src={keyIcon}
-							alt={"key icon"}
-						/>
-						<input
-							type="password"
-							id={"password"}
-							placeholder={""}
-						/>
-						<button className={classes.editBtn}>
-							<Image
-								src={editIcon}
-								alt={"edit icon"}
-							/>
-						</button>
-					</div>
-				</label>
-				<label
-					htmlFor="address"
-					className={classes.inputLabel}
-				>
-					<span className={classes.label}>Address</span>
-					<div className={classes.inputCon}>
-						<Image
-							src={homeIcon}
-							alt={"home icon"}
-						/>
-						<input
-							type="text"
-							id={"address"}
-							placeholder={""}
-						/>
-						<button className={classes.editBtn}>
-							<Image
-								src={editIcon}
-								alt={"edit icon"}
-							/>
-						</button>
-					</div>
-				</label>
-				<label
-					htmlFor="postal"
-					className={classes.inputLabel}
-				>
-					<span className={classes.label}>Postal code</span>
-					<div className={classes.inputCon}>
-						<Image
-							src={signpostIcon}
-							alt={"sign post icon"}
-						/>
-						<input
-							type="text"
-							id={"postal"}
-							placeholder={""}
-						/>
-						<button className={classes.editBtn}>
-							<Image
-								src={editIcon}
-								alt={"edit icon"}
-							/>
-						</button>
-					</div>
-				</label>
+				{inputsData.map((input, i) => (
+					<AccountInput
+						key={i}
+						title={input.title}
+						imageProps={input.imageProps}
+						inputProps={input.inputProps}
+					/>
+				))}
 			</div>
 		</Container>
 	)

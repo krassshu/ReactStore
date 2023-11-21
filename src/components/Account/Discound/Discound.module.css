@@ -1,0 +1,16 @@
+.wrapper {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
+	gap: 24px;
+	align-items: flex-start;
+}
+.input {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 392px;
+	padding: 24px 16px;
+	border-radius: 8px;
+	border: 1px solid var(--gray-20, #f6f6f6);
+	background: var(--gray-10, #f9f9f9);
+}
