@@ -9,14 +9,19 @@ export default function MoreProductInfo({
 	return (
 		<div className={classes.wrapper}>
 			<ul>
-				{techDetails.map((detail, i) => (
-					<li className={classes.item}>
-						<p>
-							{detail.key}
-							<span> {detail.value}</span>
-						</p>
-					</li>
-				))}
+				{techDetails
+					.map((detail, i) => (
+						<li
+							key={i}
+							className={classes.item}
+						>
+							<p>
+								{detail.key}
+								<span> {detail.value}</span>
+							</p>
+						</li>
+					))
+					.slice(0, 5)}
 			</ul>
 		</div>
 	)

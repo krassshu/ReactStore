@@ -21,7 +21,7 @@ export default function ProductMainInfo() {
 
 	return (
 		<div className={classes.wrapper}>
-			{loading && !product ? (
+			{loading || !product ? (
 				<TextSkeleton />
 			) : (
 				<>

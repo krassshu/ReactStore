@@ -24,7 +24,7 @@ export default function ProductInstallment() {
 
 	return (
 		<div className={classes.box}>
-			{loading && !product ? (
+			{loading || !product ? (
 				<>
 					<div></div>
 				</>
@@ -40,9 +40,7 @@ export default function ProductInstallment() {
 									prefix={"$"}
 								/>
 							</span>
-							{discount === 0 ? (
-								<></>
-							) : (
+							{discount !== 0 && (
 								<div className={classes.discount}>
 									<Image
 										src={discountSvg}
@@ -52,9 +50,7 @@ export default function ProductInstallment() {
 								</div>
 							)}
 						</div>
-						{product!.lastPrice >= product!.price ? (
-							<></>
-						) : (
+						{product!.lastPrice > product!.price && (
 							<span className={classes.lastPrice}>
 								last price{" "}
 								<NumericFormat

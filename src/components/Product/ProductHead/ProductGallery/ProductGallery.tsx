@@ -8,7 +8,6 @@ import "react-image-gallery/styles/css/image-gallery.css"
 import classes from "./ProductGallery.module.css"
 import { ProductContextProps, useProductContext } from "@/store/ProductContext"
 import GallerySkeleton from "@/components/UI/Skeletons/GallerySkeleton"
-import { Product } from "@/app/Backend/Models/productModel"
 
 interface Image {
 	original: string
