@@ -3,14 +3,21 @@ import classes from "./AddProductToBag.module.css"
 import { useDispatch } from "react-redux"
 import { addToCart } from "../../../../redux/cartSlice"
 
-export default function AddProductToBag({ id }: { id: string }) {
+export default function AddProductToBag({
+	id,
+	productName,
+	price,
+	imagePath,
+	colors,
+}: ProductToBag) {
 	const [addToWishList, setAddToWishList] = useState(false)
 	const [isHoverButton, setIsHoverButton] = useState(false)
 
 	const dispatch = useDispatch()
 
-	const handleAddToCart = (productId: string) => {
-		dispatch(addToCart(productId))
+	const handleAddToCart = () => {
+		const productDetails = { id, productName, price, imagePath, colors }
+		dispatch(addToCart(productDetails))
 	}
 
 	return (
@@ -19,7 +26,7 @@ export default function AddProductToBag({ id }: { id: string }) {
 				className={classes.addBag}
 				onMouseOver={() => setIsHoverButton(true)}
 				onMouseOut={() => setIsHoverButton(false)}
-				onClick={() => handleAddToCart(id)}
+				onClick={() => handleAddToCart()}
 			>
 				<div className={classes.shoppingSVG}>
 					<svg

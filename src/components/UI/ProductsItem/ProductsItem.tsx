@@ -11,7 +11,7 @@ import AddProductToBag from "./AddProductToBag/AddProductToBag"
 
 export default function ProductsItem(props: any) {
 	const [isHover, setIsHover] = useState(false)
-
+	// console.log(props)
 	return (
 		<div
 			className={classes.item}
@@ -30,13 +30,13 @@ export default function ProductsItem(props: any) {
 						style={{ objectFit: "contain" }}
 					/>
 				</div>
+				<div className={classes.spacer}>
+					<Image
+						src={spacerImg}
+						alt="spacer"
+					/>
+				</div>
 			</Link>
-			<div className={classes.spacer}>
-				<Image
-					src={spacerImg}
-					alt="spacer"
-				/>
-			</div>
 			<ProductDetails
 				id={props.id}
 				productName={props.productName}
@@ -53,7 +53,13 @@ export default function ProductsItem(props: any) {
 						exit={{ opacity: 0 }}
 						className={classes.bag}
 					>
-						<AddProductToBag id={props.id} />
+						<AddProductToBag
+							id={props.id}
+							productName={props.productName}
+							price={props.price}
+							imagePath={props.imagePath?.[0].medium}
+							colors={props.colors?.[0]}
+						/>
 					</motion.div>
 				)}
 			</AnimatePresence>

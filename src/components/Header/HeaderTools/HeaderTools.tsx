@@ -35,7 +35,6 @@ export default function HeaderTools({
 		setOpenLogin(!openLogin)
 	}
 	const cartItems = useSelector((state: any) => state.cart.items)
-
 	return (
 		<>
 			<ul className={classes["header-tools"]}>

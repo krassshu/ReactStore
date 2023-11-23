@@ -22,4 +22,13 @@ type ProductItem = {
 		like: number
 		dislike: number
 	}
+	colors: [{ name: string; hexCode: string }]
+}
+
+type ProductToBag = {
+	id: string
+	productName: string
+	price: number
+	imagePath: string
+	colors: { name: string; hexCode: string }
 }

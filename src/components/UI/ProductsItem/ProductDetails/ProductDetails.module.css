@@ -1,9 +1,18 @@
+.link {
+	color: var(--black, #0c0c0c);
+	text-decoration: none;
+}
+
 .model-info {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	line-height: 24px;
 	padding: 16px 0;
+}
+
+.model-info:hover {
+	color: var(--primary);
 }
 
 .meta {
