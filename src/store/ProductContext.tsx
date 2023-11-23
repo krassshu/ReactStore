@@ -9,14 +9,14 @@ import axios from "axios"
 import { Product } from "@/app/Backend/Models/productModel"
 
 export interface ProductContextProps {
-	product: Product | null
+	product?: Product | null
 	loading: boolean
 }
 
 const ProductContext = createContext<ProductContextProps | undefined>(undefined)
 
 export const ProductProvider: React.FC<{
-	productId: string
+	productId?: string
 	children: ReactNode
 }> = ({ productId, children }) => {
 	const [product, setProduct] = useState<Product | null>(null)
@@ -24,10 +24,15 @@ export const ProductProvider: React.FC<{
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
-				const res = await axios.get(
-					`/api/getSingleProduct/?productId=${productId}`
-				)
-				setProduct(res.data.product)
+				if (productId) {
+					const res = await axios.get(
+						`/api/getSingleProduct/?productId=${productId}`
+					)
+					setProduct(res.data.product)
+				} else {
+					const res = await axios.get(`/api/getAllProducts`)
+					setProduct(res.data.product)
+				}
 			} catch (error) {
 				console.error("Error fetching product:", error)
 			} finally {

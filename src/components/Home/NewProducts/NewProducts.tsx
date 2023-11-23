@@ -4,27 +4,12 @@ import classes from "./NewProducts.module.css"
 import ProductsItem from "@/components/UI/ProductsItem/ProductsItem"
 import SectionHeader from "@/components/UI/SectionHeader/SectionHeader"
 import ProductSkeleton from "@/components/UI/Skeletons/ProductSkeleton"
-import axios from "axios"
-import { useEffect, useState } from "react"
+import { useProductContext } from "@/store/ProductContext"
+import { useState } from "react"
 
 export default function NewProducts() {
-	const [products, setProducts] = useState([])
-	const [loading, setLoading] = useState(true)
+	const { product, loading = true } = useProductContext() || {}
 
-	useEffect(() => {
-		async function fetchData() {
-			try {
-				const res = await axios.get("/api/getProducts")
-				setProducts(res.data.product)
-				setLoading(false)
-			} catch (error: any) {
-				console.error("Błąd podczas pobierania danych:", error.message)
-			}
-		}
-
-		fetchData()
-	}, [])
-	// console.log(products)
 	return (
 		<section className={classes.onSale}>
 			<SectionHeader
@@ -32,11 +17,11 @@ export default function NewProducts() {
 				url="dasdas"
 			/>
 
-			{loading ? (
+			{loading || !product ? (
 				<ProductSkeleton />
 			) : (
 				<div className={classes.wrapper}>
-					{products
+					{product
 						.map((prod: ProductItem) => (
 							<ProductsItem
 								key={prod._id}

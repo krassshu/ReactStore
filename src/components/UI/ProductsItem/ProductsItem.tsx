@@ -9,7 +9,7 @@ import { useState } from "react"
 import { AnimatePresence, motion } from "framer-motion"
 import AddProductToBag from "./AddProductToBag/AddProductToBag"
 
-export default function ProductsItem(props: any) {
+export default function ProductsItem(props: ProductItem) {
 	const [isHover, setIsHover] = useState(false)
 	// console.log(props)
 	return (

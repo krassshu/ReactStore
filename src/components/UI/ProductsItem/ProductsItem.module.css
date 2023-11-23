@@ -4,6 +4,7 @@
 	justify-content: space-between;
 	flex-direction: column;
 	gap: 16px;
+	width: 290px;
 	height: 347px;
 	padding: 16px;
 	border-radius: 8px;

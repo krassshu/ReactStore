@@ -9,6 +9,7 @@ import TopBrands from "@/components/Home/TopBrands/TopBrands"
 import PromoBaner from "@/components/Home/PromoBaner/PromoBaner"
 import OurServices from "@/components/OurServices/OurServices"
 import Image from "next/image"
+import { ProductProvider } from "@/store/ProductContext"
 
 export default function Home() {
 	return (
@@ -29,10 +30,12 @@ export default function Home() {
 				</div>
 			</section>
 			<Category />
-			<OnSale />
-			<NewProducts />
-			<Promotion />
-			<BestSellers />
+			<ProductProvider>
+				<OnSale />
+				<NewProducts />
+				<Promotion />
+				<BestSellers />
+			</ProductProvider>
 			<TopBrands />
 			<PromoBaner />
 			<OurServices />

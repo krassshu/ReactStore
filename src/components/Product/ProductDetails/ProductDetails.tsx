@@ -9,22 +9,6 @@ import classes from "./ProductDetails.module.css"
 import { ProductContextProps, useProductContext } from "@/store/ProductContext"
 import TableSkeleton from "@/components/UI/Skeletons/TableSkeleton"
 
-function createData(name: string, data: string) {
-	return { name, data }
-}
-
-const rows = [
-	createData(
-		"Display",
-		"13.3-inch (diagonal) LED-backlit display with IPS technology"
-	),
-	createData("Graphics", "Apple 10-core GPU"),
-	createData("Processor", "Apple M2 chip"),
-	createData("In the box", "67W USB-C Power Adapter, USB-C Charge Cable (2 m)"),
-	createData("Height", "0.61 inch (1.56 cm)"),
-	createData("Width", "11.97 inches (30.41 cm)"),
-]
-
 export default function ProductDetails() {
 	const { product, loading = true }: ProductContextProps = useProductContext()
 	return (
