@@ -1,3 +1,5 @@
+"use client"
+
 import React, {
 	ReactNode,
 	createContext,
@@ -17,8 +19,9 @@ const ProductContext = createContext<ProductContextProps | undefined>(undefined)
 
 export const ProductProvider: React.FC<{
 	productId?: string
+	category?: string
 	children: ReactNode
-}> = ({ productId, children }) => {
+}> = ({ productId, category, children }) => {
 	const [product, setProduct] = useState<Product | null>(null)
 	const [loading, setLoading] = useState(true)
 	useEffect(() => {
@@ -27,6 +30,11 @@ export const ProductProvider: React.FC<{
 				if (productId) {
 					const res = await axios.get(
 						`/api/getSingleProduct/?productId=${productId}`
+					)
+					setProduct(res.data.product)
+				} else if (category) {
+					const res = await axios.get(
+						`/api/getAllProducts/?category=${category}`
 					)
 					setProduct(res.data.product)
 				} else {

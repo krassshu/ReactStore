@@ -74,7 +74,7 @@ export async function POST(request: Request) {
 			lastPrice: Number(lastPrice),
 			brand,
 			stock: Number(stock),
-			category,
+			category: category.toLowerCase(),
 			isDiscount,
 			isNewProduct,
 			colors,

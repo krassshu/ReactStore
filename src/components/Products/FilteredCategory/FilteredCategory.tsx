@@ -1,6 +1,7 @@
+import { memo } from "react"
 import classes from "./FilteredCategory.module.css"
 
-export default function FilteredCategory() {
+const FilteredCategory = memo(() => {
 	return (
 		<div className={classes.wrapper}>
 			<div className={classes.category}>
@@ -30,4 +31,5 @@ export default function FilteredCategory() {
 			</div>
 		</div>
 	)
-}
+})
+export default FilteredCategory

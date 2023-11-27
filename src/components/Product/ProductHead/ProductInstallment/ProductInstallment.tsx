@@ -11,8 +11,18 @@ export default function ProductInstallment() {
 	const { product, loading = true }: ProductContextProps = useProductContext()
 	const dispatch = useDispatch()
 
-	const handleAddToCart = (productId: string) => {
-		dispatch(addToCart(productId))
+	const handleAddToCart = (id: string) => {
+		if (product) {
+			const productDetails: ProductToBag = {
+				id: id,
+				productName: product.productName,
+				price: product.price,
+				imagePath: product.imagePath?.[0]?.medium || "",
+				colors: product.colors?.[0] || { name: "", hexCode: "" },
+			}
+
+			dispatch(addToCart(productDetails))
+		}
 	}
 	console.log(product)
 

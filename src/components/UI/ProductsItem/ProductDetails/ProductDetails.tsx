@@ -10,7 +10,7 @@ export default function ProductDetails(props: any) {
 	return (
 		<>
 			<Link
-				href={`/products/${props.id}`}
+				href={`/p/${props.id}`}
 				className={classes.link}
 			>
 				<h6 className={classes["model-info"]}>{props.productName}</h6>

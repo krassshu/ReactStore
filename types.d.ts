@@ -13,7 +13,7 @@ type Login = {
 
 type ProductItem = {
 	_id?: string
-	id: string
+	id?: string
 	imagePath: []
 	productName: string
 	price: number
@@ -31,4 +31,14 @@ type ProductToBag = {
 	price: number
 	imagePath: string
 	colors: { name: string; hexCode: string }
+}
+
+type ProductData = {
+	name: string
+	amount: number
+}
+
+type FiltersData = {
+	filtrName: string
+	data: ProductData[]
 }

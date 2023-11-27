@@ -12,23 +12,27 @@ import AddProductToBag from "./AddProductToBag/AddProductToBag"
 export default function ProductsItem(props: ProductItem) {
 	const [isHover, setIsHover] = useState(false)
 	// console.log(props)
+
 	return (
 		<div
 			className={classes.item}
 			onMouseEnter={() => setIsHover(true)}
 			onMouseLeave={() => setIsHover(false)}
+			title={props.productName}
 		>
 			<Link
-				href={`/products/${props.id}`}
+				href={`/p/${props.id || props._id}`}
 				className={classes.link}
 			>
 				<div className={classes["product-img"]}>
-					<Image
-						src={props.imagePath?.[0].medium}
-						alt={props.productName}
-						fill={true}
-						style={{ objectFit: "contain" }}
-					/>
+					{props.imagePath && props.imagePath[0]?.medium && (
+						<Image
+							src={props.imagePath[0].medium}
+							alt={props.productName}
+							fill={true}
+							style={{ objectFit: "contain" }}
+						/>
+					)}
 				</div>
 				<div className={classes.spacer}>
 					<Image
@@ -38,12 +42,11 @@ export default function ProductsItem(props: ProductItem) {
 				</div>
 			</Link>
 			<ProductDetails
-				id={props.id}
+				id={props.id || props._id}
 				productName={props.productName}
 				price={props.price}
 				lastPrice={props.lastPrice}
 				rating={props.rating}
-				imagePath={[]}
 			/>
 			<AnimatePresence>
 				{isHover && (
@@ -54,10 +57,10 @@ export default function ProductsItem(props: ProductItem) {
 						className={classes.bag}
 					>
 						<AddProductToBag
-							id={props.id}
+							id={props.id || props._id}
 							productName={props.productName}
 							price={props.price}
-							imagePath={props.imagePath?.[0].medium}
+							imagePath={props.imagePath?.[0]?.medium}
 							colors={props.colors?.[0]}
 						/>
 					</motion.div>

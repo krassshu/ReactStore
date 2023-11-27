@@ -15,7 +15,8 @@
 	transition: border-bottom 0.3s;
 }
 
-.el:hover {
+.el:hover,
+.active {
 	border-bottom: 1px solid var(--primary);
 }
 

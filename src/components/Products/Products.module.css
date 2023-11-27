@@ -7,10 +7,3 @@
 .products {
 	width: calc(100% - 288px - 24px);
 }
-
-.products-wrapper {
-	display: flex;
-	/* justify-content: space-between; */
-	flex-wrap: wrap;
-	gap: 24px;
-}

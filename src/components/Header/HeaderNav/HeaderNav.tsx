@@ -43,8 +43,8 @@ export default function HeaderNav({
 					onClick={handleMouseOut}
 				>
 					<Link
-						href="/products"
-						className={pathname.startsWith("/products") ? "active" : ""}
+						href="/c"
+						className={pathname.startsWith("/c") ? "active" : ""}
 					>
 						Products
 					</Link>
