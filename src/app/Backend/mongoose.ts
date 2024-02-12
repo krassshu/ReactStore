@@ -3,7 +3,6 @@ import mongoose from "mongoose"
 const connectDB = async () => {
 	try {
 		const uri = process.env.DB_CLIENT
-
 		if (!uri) {
 			throw new Error("MongoDB URI is not defined")
 		}

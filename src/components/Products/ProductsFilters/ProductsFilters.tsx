@@ -1,14 +1,39 @@
-"use client"
+import { Product } from "@/app/Backend/Models/productModel"
 import BasedFilter from "./BasedFilter/BasedFilter"
 import DiscountFilters from "./DiscountFilters/DiscountFilters"
 import PriceFilters from "./PriceFilters/PriceFilters"
 import classes from "./ProductsFilters.module.css"
-import { useProductFilters } from "../useProductFilters"
 
-export default function ProductsFilters() {
-	const filterFields = ["brand", "price"]
+export interface BrandCount {
+	brand: string
+	amount: number
+}
 
-	const filters = useProductFilters(filterFields)
+function getBrandCounts(products: Product[]): BrandCount[] {
+	const brandCounts: { [key: string]: number } = {}
+
+	products.forEach((product) => {
+		const brand = product.brand
+
+		if (brand) {
+			if (brandCounts[brand]) {
+				brandCounts[brand]++
+			} else {
+				brandCounts[brand] = 1
+			}
+		}
+	})
+
+	const result: BrandCount[] = Object.keys(brandCounts).map((brand) => ({
+		brand,
+		amount: brandCounts[brand],
+	}))
+
+	return result
+}
+
+export default function ProductsFilters({ products }: { products: Product[] }) {
+	const brandCounts = getBrandCounts(products)
 
 	return (
 		<aside className={classes.aside}>
@@ -16,8 +41,7 @@ export default function ProductsFilters() {
 				<span>Filters</span>
 				<button className={classes.clearBtn}>Clear all</button>
 			</div>
-
-			{filters && <BasedFilter {...filters[0]} />}
+			<BasedFilter brands={brandCounts} />
 			<DiscountFilters />
 			<PriceFilters />
 		</aside>

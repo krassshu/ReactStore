@@ -1,5 +1,5 @@
-import ProductsC from "@/components/Products/Products"
+import { redirect } from "next/navigation"
 
-export default function Products() {
-	return <ProductsC />
+export default async function Products({ searchParams }: any) {
+	redirect("/c/products")
 }

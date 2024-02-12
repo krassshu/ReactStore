@@ -6,48 +6,48 @@ import arrowImg from "@/assets/icons/arrow-down.svg"
 import Accordion from "@mui/material/Accordion"
 import AccordionSummary from "@mui/material/AccordionSummary"
 import AccordionDetails from "@mui/material/AccordionDetails/AccordionDetails"
-import { usePathname } from "next/navigation"
+import { BrandCount } from "../ProductsFilters"
 import { useEffect, useState } from "react"
-import { useRerenderContext } from "@/store/RerenderContext"
+import { getFilteredProducts } from "@/app/c/[products]/page"
 
-export default function BasedFilter({
-	filtrName,
-	data,
-}: {
-	filtrName: string
-	data: ProductData[]
-}) {
-	const pathname = usePathname()
+export default function BasedFilter({ brands }: { brands: BrandCount[] }) {
 	const [checkedValues, setCheckedValues] = useState<string[]>([])
-
-	const { forceUpdate } = useRerenderContext()
 
 	useEffect(() => {
 		const queryParams = new URLSearchParams(window.location.search)
-		const values = queryParams.getAll(filtrName)
+		const values = queryParams.getAll("brand")
 		setCheckedValues(values)
-	}, [pathname])
+	}, [])
 
-	const handleCheckboxChange = (itemName: string) => {
+	const handleBrandChange = async (brand: string) => {
 		const queryParams = new URLSearchParams(window.location.search)
-		const currentValues = queryParams.getAll(filtrName)
+		const currentValues = queryParams.getAll("brand")
 
-		if (currentValues.includes(itemName)) {
-			const updatedValues = currentValues.filter((value) => value !== itemName)
+		if (currentValues.includes(brand)) {
+			const updatedValues = currentValues.filter((value) => value !== brand)
+			setCheckedValues(updatedValues)
 			if (updatedValues.length > 0) {
-				queryParams.set(filtrName, updatedValues.join(","))
+				queryParams.set("brand", updatedValues.join(","))
 			} else {
-				queryParams.delete(filtrName)
+				queryParams.delete("brand")
 			}
-		} else {
-			queryParams.append(filtrName, itemName)
-		}
 
+			const filteredProducts = await getFilteredProducts(
+				updatedValues.join(",")
+			)
+		} else {
+			const updatedValues = checkedValues.includes(brand)
+				? checkedValues.filter((value) => value !== brand)
+				: [...checkedValues, brand]
+			queryParams.append("brand", brand)
+			const filteredProducts = await getFilteredProducts(
+				updatedValues.join(",")
+			)
+		}
 		const newSearch = queryParams.toString()
-		const newUrl = `${pathname}?${newSearch}`
-		history.pushState({}, "", newUrl)
-		forceUpdate()
-		setCheckedValues(queryParams.getAll(filtrName))
+		const newUrl = `${window.location.pathname}?${newSearch}`
+		window.history.pushState({}, "", newUrl)
+		setCheckedValues(queryParams.getAll("brand"))
 	}
 
 	return (
@@ -64,30 +64,29 @@ export default function BasedFilter({
 						}
 					>
 						<div className={classes.head}>
-							<span>{filtrName}</span>
+							<span>Brands</span>
 						</div>
 					</AccordionSummary>
 					<AccordionDetails>
 						<div className={classes.brands}>
-							{data &&
-								data.map((item: ProductData, i: number) => (
-									<label
-										key={i}
-										htmlFor={item.name}
-										className={classes.label}
-									>
-										<input
-											type="checkbox"
-											id={item.name}
-											checked={checkedValues.includes(item.name)}
-											onChange={() => handleCheckboxChange(item.name)}
-										/>
-										<div className={classes.desc}>
-											<span>{item.name}</span>
-											<p className={classes.quantity}>({item.amount})</p>
-										</div>
-									</label>
-								))}
+							{brands.map((item: BrandCount, i: number) => (
+								<label
+									key={i}
+									htmlFor={item.brand}
+									className={classes.label}
+								>
+									<input
+										type="checkbox"
+										id={item.brand}
+										checked={checkedValues.includes(item.brand)}
+										onChange={() => handleBrandChange(item.brand)}
+									/>
+									<div className={classes.desc}>
+										<span>{item.brand}</span>
+										<p className={classes.quantity}>({item.amount})</p>
+									</div>
+								</label>
+							))}
 						</div>
 					</AccordionDetails>
 				</Accordion>

@@ -7,6 +7,7 @@ connectDB()
 export async function GET(req: Request) {
 	const { searchParams } = new URL(req.url)
 	const category = searchParams.get("category")
+	console.log(category)
 	try {
 		if (category) {
 			const products = await ProductModel.find({
